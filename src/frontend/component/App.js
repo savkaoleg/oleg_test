@@ -4,6 +4,7 @@ import PurpleAppBar from './PurpleAppBar.js';      // AppBar with simple overrid
 import SuccessButton from './SuccessButton.js';    // A button with complex overrides
 import { Button, Input } from 'react-toolbox'; // Bundled component import
 import { connect } from 'react-redux';
+import Form from './Form.js'
 import { doMagic } from '../redux/actions/example';
 
 
@@ -31,6 +32,7 @@ class App extends React.Component {
           }
         })()}
         <section style={{ padding: 40 }}>
+          <Form />
           <SuccessButton label='Success' primary raised />
           <Button label='Primary Butto' primary />
         </section>
