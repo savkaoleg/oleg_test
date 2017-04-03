@@ -1,6 +1,13 @@
-import React from 'react';
-import { Button } from 'react-toolbox/lib/button';
-import theme from './SuccessButton.css';
+import React, {StyleSheet, Dimensions, PixelRatio} from "react-native";
+const {width, height, scale} = Dimensions.get("window"),
+    vw = width / 100,
+    vh = height / 100,
+    vmin = Math.min(vw, vh),
+    vmax = Math.max(vw, vh);
 
-const SuccessButton = (props) => <Button {...props} theme={theme} />;
-export default SuccessButton;
+export default StyleSheet.create({
+    "button": {
+        "backgroundColor": "var(--palette-green-700) !important",
+        "color": "white!important"
+    }
+});

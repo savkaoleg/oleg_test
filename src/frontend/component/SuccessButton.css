@@ -2,4 +2,5 @@
 
 .button {
   background-color: var(--palette-green-700) !important;
+  color: white!important;
 }
