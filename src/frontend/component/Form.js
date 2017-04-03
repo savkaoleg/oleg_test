@@ -10,13 +10,12 @@ export default class Form extends Component {
     this.setState({...this.state, [name]: value});
 
     if(name =='passRepeat'){
-
-    if(this.state.passRepeat && this.state.pass && value != this.state.pass){
-     this.setState({passError: 'err'});
-    }
-    else if (this.state.passRepeat && this.state.pass && value == this.state.pass) {
-      this.setState({passError: ''});
-    }
+      if(this.state.passRepeat && this.state.pass && value != this.state.pass){
+        this.setState({passError: 'err'});
+      }
+      else if (this.state.passRepeat && this.state.pass && value == this.state.pass) {
+        this.setState({passError: ''});
+      }
     }
   };
 
