@@ -25,6 +25,7 @@ export default class Form extends Component {
   };
 
   changeEmail(value){
+    console.log(this.props.store);
     this.props.store.dispatch(changeEmail(value));
   };
 
@@ -55,11 +56,11 @@ export default class Form extends Component {
 
       return (
         <form>
-          <Input type='text' label='Name' name='name' value={this.props.store.form.name} onChange={this.changeName.bind(this)} maxLength={16} required/>
+          <Input type='text' label='Name' name='name' value={this.props.store.form.name} onChange={this.changeName.bind(this)} maxLength={16 } required/>
           <Input type='email' label='Email address'  value={this.props.store.form.email} onChange={this.changeEmail.bind(this)} required/>
           <Input type='password' label='Pass' name='password' value={this.props.store.form.pass} onChange={this.changePass.bind(this)} maxLength={16} required/>
           <Input type='password' label='Repeat pass' name='passwordRepeat' value={this.props.store.form.passRepeat} error={this.props.store.form.passError} onChange={this.changePassRepeat.bind(this)} maxLength={16} required/>
-          <Button type="submit" label='Send' theme={theme} onClick={this.changeName} />
+          <Button type="submit" label='Send' theme={theme} />
         </form>
       );
   }
