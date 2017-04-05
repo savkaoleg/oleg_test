@@ -1,7 +1,6 @@
 import React from 'react';
 import FontIcon from 'react-toolbox/lib/font_icon';
 import PurpleAppBar from './PurpleAppBar.js';      // AppBar with simple overrides
-// import SuccessButton from './SuccessButton.js';    // A button with complex overrides
 import { Button, Input } from 'react-toolbox'; // Bundled component import
 import { connect } from 'react-redux';
 import Form from './Form.js'
@@ -20,7 +19,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this)
     return (
       <div>
         <PurpleAppBar />
@@ -32,7 +30,7 @@ class App extends React.Component {
           }
         })()}
         <section style={{ padding: 40 }}>
-          <Form />
+            <Form store={this.props}/>
         </section>
       </div>
     );
@@ -40,10 +38,12 @@ class App extends React.Component {
 }
 
 function select(state) {
-  console.info(state);
+
   return {
-    example:state.example
-  }
+    example:state.example,
+    form:state.form
+
+}
 }
 
 export default connect(select)(App);
