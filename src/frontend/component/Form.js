@@ -16,12 +16,12 @@ export default class Form extends Component {
 
   changeVariable(name, value){
     this.props.store.dispatch(changeVariable(name, value));
-    if(name == 'CHANGE_PASSREPEAT_VARIABLE'){
+    if(name == 'passRepeat'){
       if(this.props.store.form.passRepeat && this.props.store.form.pass && value != this.props.store.form.pass){
-        this.changeVariable('CHANGE_PASSERROR_VARIABLE', 'err');
+        this.changeVariable('passError', 'err');
       }
       else if (this.props.store.form.passRepeat && this.props.store.form.pass && value == this.props.store.form.pass) {
-        this.changeVariable('CHANGE_PASSERROR_VARIABLE', '');
+        this.changeVariable('passError', '');
       }
      }
    };
@@ -31,10 +31,10 @@ export default class Form extends Component {
 
       return (
         <form>
-          <Input type='text' label='Name' name='name' value={this.props.store.form.name} onChange={this.changeVariable.bind(this, 'CHANGE_NAME_VARIABLE')} maxLength={16 } required/>
-          <Input type='email' label='Email address'  value={this.props.store.form.email} onChange={this.changeVariable.bind(this, 'CHANGE_EMAIL_VARIABLE')} required/>
-          <Input type='password' label='Pass' name='password' value={this.props.store.form.pass} onChange={this.changeVariable.bind(this, 'CHANGE_PASS_VARIABLE')} maxLength={16} required/>
-          <Input type='password' label='Repeat pass' name='passwordRepeat' value={this.props.store.form.passRepeat} error={this.props.store.form.passError} onChange={this.changeVariable.bind(this, 'CHANGE_PASSREPEAT_VARIABLE')} maxLength={16} required/>
+          <Input type='text' label='Name' name='name' value={this.props.store.form.name} onChange={this.changeVariable.bind(this, 'name')} maxLength={16 } required/>
+          <Input type='email' label='Email address'  value={this.props.store.form.email} onChange={this.changeVariable.bind(this, 'email')} required/>
+          <Input type='password' label='Pass' name='password' value={this.props.store.form.pass} onChange={this.changeVariable.bind(this, 'pass')} maxLength={16} required/>
+          <Input type='password' label='Repeat pass' name='passwordRepeat' value={this.props.store.form.passRepeat} error={this.props.store.form.passError} onChange={this.changeVariable.bind(this, 'passRepeat')} maxLength={16} required/>
           <Button type="submit" label='Send' theme={theme} />
         </form>
       );
