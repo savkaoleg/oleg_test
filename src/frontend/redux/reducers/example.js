@@ -1,4 +1,4 @@
-import { CHANGE_SUPER_VARIABLE } from '../consts/example';
+import { CHANGE_SUPER_VARIABLE,SEND_AJAX } from '../consts/example';
 
 const initialState = {
   superVariable: 'hello world'
@@ -11,6 +11,7 @@ export default function tab(state = initialState, action) {
                ...state,
                superVariable:action.newSuperVariable
       };
+    case SEND_AJAX: 
     default:
       return state;
   }

@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { overrideComponentTypeChecker } from 'react-toolbox';
 import configureStore from './redux/configureStore';
+import "babel-polyfill";
+import "babel-core/register";
+
 
 const store = configureStore();
 const rootEl = document.getElementById('app');

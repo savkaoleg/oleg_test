@@ -3,7 +3,7 @@ import {Input} from 'react-toolbox';
 import { Button } from 'react-toolbox/lib/button';
 import theme from './SuccessButton.css';
 import { changeVariable } from '../redux/actions/changeVariable';
-
+import { doMagicAjax } from '../redux/actions/example';
 
 
 export default class Form extends Component {
@@ -12,6 +12,10 @@ export default class Form extends Component {
 
     this.changeVariable = this.changeVariable.bind(this);
 
+  }
+
+  componentDidMount(){
+    this.props.store.dispatch(doMagicAjax());
   }
 
   changeVariable(name, value){
