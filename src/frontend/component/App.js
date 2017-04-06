@@ -25,7 +25,9 @@ class App extends React.Component {
         {(() => {
           if(this.props.example && this.props.example.superVariable){
             return (
-              <div style={{margin:'10px'}}>{this.props.example.superVariable}  <Button label='superChange' primary raised onClick={this.doMagic} /></div>
+              <div style={{margin:'10px'}}>{this.props.example.superVariable}
+                <Button label='superChange' primary raised onClick={this.doMagic} />
+              </div>
             );
           }
         })()}

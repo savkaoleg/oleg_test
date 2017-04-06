@@ -3,7 +3,9 @@ const initialState = {
   email: '',
   pass: '',
   passRepeat: '',
-  passError: ''
+  passError: '',
+  formStatus: false,
+  sendStatus: ''
 };
 
 export default function tab(state = initialState, action) {
