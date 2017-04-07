@@ -13,16 +13,10 @@ export function changeVariable(typeOfAction, newVariable){
 export function sendForm(){
   	return async (dispatch) => {
       dispatch(changeVariable('formStatus', true));
-		  const response = await create(`http://jsonplaceholder.typicode.com/posts`);
+		  const response = await read(`http://web-lab.zzz.com.ua/`);
+      const message = await response.json();
+      dispatch(changeVariable('sendStatus', message));
+      dispatch(changeVariable('formStatus', false));
 
-
-      if(response.status == 201){
-        dispatch(changeVariable('formStatus', false));
-        dispatch(changeVariable('sendStatus', 'Saved, have nice day'));
-      }
-      else if(response.status == 401){
-        dispatch(changeVariable('formStatus', false));
-        dispatch(changeVariable('sendStatus', 'Sorry, our server is down'));
-      }
 	  }
 }

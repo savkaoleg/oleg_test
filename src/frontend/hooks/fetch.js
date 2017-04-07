@@ -21,7 +21,8 @@ export function read(url) {
 export function create(url, body = {}) {
   return fetch(url, {
     ...defaultParams,
-    method: 'post',
+    method: 'POST',
+    mode: 'no-cors',
     body: JSON.stringify(body)
   });
 }
