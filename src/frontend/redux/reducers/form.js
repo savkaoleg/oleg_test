@@ -1,6 +1,7 @@
 const initialState = {
   name: '',
   email: '',
+  emailError: '',
   pass: '',
   passRepeat: '',
   passError: '',
